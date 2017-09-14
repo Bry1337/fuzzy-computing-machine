@@ -1,6 +1,7 @@
 # fuzzy-computing-machine
 
 This is a sample project based on Uncle Bob's clean architecture.
+* [Uncle Bob's Clean Architecture](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html)
 
 ## Getting Started
 
