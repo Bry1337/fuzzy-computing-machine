@@ -6,7 +6,7 @@ package com.fcm.fuzzycomputingmachine.dagger.application;
 
 import android.content.Context;
 import com.fcm.fuzzycomputingmachine.dagger.component.DaggerApplicationComponent;
-import com.fcm.fuzzycomputingmachine.ui.activities.MainActivity;
+import com.fcm.fuzzycomputingmachine.ui.activities.main.MainActivity;
 import com.fcm.fuzzycomputingmachine.dagger.component.ApplicationComponent;
 import com.fcm.fuzzycomputingmachine.dagger.component.activities.MainActivityComponent;
 import com.fcm.fuzzycomputingmachine.dagger.modules.ApplicationModule;

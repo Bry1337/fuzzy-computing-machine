@@ -7,6 +7,7 @@ package com.fcm.fuzzycomputingmachine.dagger.modules.api;
 import android.app.Application;
 import android.support.compat.BuildConfig;
 import com.fcm.fuzzycomputingmachine.api.utils.RxErrorHandlingCallAdapterFactory;
+import com.fcm.fuzzycomputingmachine.managers.AppConstants;
 import dagger.Module;
 import dagger.Provides;
 import java.util.concurrent.TimeUnit;
@@ -38,6 +39,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
   @Provides @Singleton Retrofit provideRestAdapter(final Application application, final OkHttpClient okHttpClient) {
     final Retrofit.Builder builder = new Retrofit.Builder();
     builder.client(okHttpClient)
+        .baseUrl(AppConstants.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxErrorHandlingCallAdapterFactory.create());
     return builder.build();

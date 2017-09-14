@@ -1,3 +1,7 @@
 <resources>
   <string name="app_name">FuzzyComputingMachine</string>
+
+  <string name="OK">OK</string>
+  <string name="network_issue_found">Network issue found.</string>
+  <string name="http_error_unexpected">Http request: Unexpected error found</string>
 </resources>

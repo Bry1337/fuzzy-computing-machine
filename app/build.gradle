@@ -30,6 +30,16 @@ android {
       minifyEnabled false
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
+
+    buildTypes.each {
+      it.buildConfigField 'String', 'NEWS_API_KEY', newsApiKey
+    }
+
+  }
+  compileOptions {
+    incremental = false
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
   }
 }
 

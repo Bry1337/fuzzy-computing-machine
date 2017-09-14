@@ -4,9 +4,10 @@
 
 package com.fcm.fuzzycomputingmachine.dagger.component.activities;
 
-import com.fcm.fuzzycomputingmachine.ui.activities.MainActivity;
 import com.fcm.fuzzycomputingmachine.dagger.modules.activities.MainActivityModule;
+import com.fcm.fuzzycomputingmachine.dagger.modules.api.MainApiModule;
 import com.fcm.fuzzycomputingmachine.dagger.scopes.UserScope;
+import com.fcm.fuzzycomputingmachine.ui.activities.main.MainActivity;
 import dagger.Subcomponent;
 
 /**
@@ -15,6 +16,7 @@ import dagger.Subcomponent;
  * @author edwardbryan.abergas@gmail.com
  */
 
-@UserScope @Subcomponent(modules = { MainActivityModule.class }) public interface MainActivityComponent {
+@UserScope @Subcomponent(modules = { MainActivityModule.class, MainApiModule.class })
+public interface MainActivityComponent {
   MainActivity inject(MainActivity mainActivity);
 }

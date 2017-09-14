@@ -35,7 +35,7 @@ public final class RxErrorHandlingCallAdapterFactory extends CallAdapter.Factory
   }
 
   @Override public CallAdapter<?> get(Type returnType, Annotation[] annotations, Retrofit retrofit) {
-    return null;
+    return new RxCallAdapterWrapper(retrofit, rxJavaCallAdapterFactory.get(returnType, annotations, retrofit));
   }
 
   private static class RxCallAdapterWrapper implements CallAdapter<Observable<?>> {
