@@ -1,0 +1,76 @@
+buildscript {
+  repositories {}
+
+  dependencies {}
+}
+repositories {
+  mavenCentral()
+  jcenter()
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+apply from: '../gradle/config/quality.gradle'
+
+android {
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  buildToolsVersion rootProject.ext.buildToolsVersion
+  defaultConfig {
+    applicationId "com.fcm.fuzzycomputingmachine"
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+    multiDexEnabled true
+    versionCode rootProject.ext.versionCode
+    versionName rootProject.ext.versionName
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    exclude group: 'com.android.support', module: 'support-annotations'
+  })
+  testCompile 'junit:junit:4.12'
+
+  compile "com.android.support:appcompat-v7:$rootProject.androidSupportVersion"
+  compile "com.android.support:design:$rootProject.androidSupportVersion"
+
+  // Butter Knife
+  compile "com.jakewharton:butterknife:$rootProject.butterknifeVersion"
+  apt "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
+
+  // Dagger 2
+  compile "com.google.dagger:dagger:$rootProject.daggerVersion"
+  apt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+
+  // Retrofit
+  compile "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+  compile "com.squareup.retrofit2:adapter-rxjava:$rootProject.retrofitVersion"
+  compile "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+
+  // Rx
+  compile "io.reactivex:rxandroid:$rootProject.rxVersion"
+  compile "io.reactivex:rxjava:$rootProject.rxVersion"
+  compile "com.jakewharton.rxbinding:rxbinding:$rootProject.rxBindingVersion"
+  compile "com.jakewharton.rxbinding:rxbinding-appcompat-v7:$rootProject.rxBindingVersion"
+
+  // OkHttp
+  compile "com.squareup.okhttp3:okhttp:$rootProject.okHttpVersion"
+  compile "com.squareup.okhttp3:logging-interceptor:$rootProject.okHttpVersion"
+
+  // Utility
+  compile "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+  compile "org.apache.commons:commons-lang3:$rootProject.apacheCommonsVersion"
+
+  // Leak Canary
+  debugCompile "com.squareup.leakcanary:leakcanary-android:$rootProject.leakcanaryVersion"
+  releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:$rootProject.leakcanaryVersion"
+}

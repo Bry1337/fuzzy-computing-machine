@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2016. GreatFeat Service Inc.
+  -->
+<FindBugsFilter>
+  <Match>
+    <Class name="~.*\.R\$.*"/>
+  </Match>
+  <Match>
+    <Class name="~.*\.Manifest\$.*"/>
+  </Match>
+  <Match>
+    <Class name="~.*\.*Test"/>
+    <Not>
+      <Bug code="IJU"/>
+    </Not>
+  </Match>
+</FindBugsFilter>
