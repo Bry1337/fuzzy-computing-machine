@@ -47,6 +47,6 @@ newsApiKey="API KEY GOES HERE"
 
 ## Authors
 
-* **Edward Bryan Abergas** - *Initial work* - [Bry1337](https://github.com/Bry1337)
+* **Edward Bryan Abergas** - *Android Developer* - [Bry1337](https://github.com/Bry1337)
 
 [contributor](https://github.com/ceosilvajr) who participated in this project.
